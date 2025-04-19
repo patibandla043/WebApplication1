@@ -1,0 +1,13 @@
+﻿@{
+    ViewData["Title"] = "Create Page";
+}
+@model WebApplication1.Models.Expense;
+<form asp-action="CreateForm" asp-controller="">
+    
+    <input hidden class="form-control" type="number" placeholder="0" asp-for="Id" />
+    <label class=" mt-2">Name</label>
+    <input class="form-control" type="text" placeholder="Add name" asp-for="Name" />
+    <label class=" mt-2">Description</label>
+    <input class="form-control" type="text" placeholder="Add description" asp-for="Description" />
+    <button class="btn btn-primary mt-4" type="submit">Submit</button>
+</form>

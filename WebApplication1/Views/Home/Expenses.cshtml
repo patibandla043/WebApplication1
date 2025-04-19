@@ -1,0 +1,40 @@
+﻿@{
+    ViewData["Title"] = "Expensees Page";
+}
+@model List<Expense>
+<div class="text-center">
+    <h1 class="display-4">Super Mart</h1>
+    <br />
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                foreach (var b in Model)
+                {
+                    <tr>
+                        <td>
+                            @b.Id
+                        </td>
+                        <td>
+                            @b.Name
+                        </td>
+                        <td>
+                            @b.Description
+                        </td>
+                        <td>
+                            <a asp-action="Create" asp-route-id="@b.Id">Edit</a>
+                            <a asp-action="Delete" asp-route-id="@b.Id">Delete</a>
+                        </td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>
